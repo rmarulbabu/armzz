@@ -1,83 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARL & AMZ</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARL & AMZ - Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body class="body">
+<body>
+    <div class="app">
+        <!-- SweetPulse Background -->
+        <div class="sweetpulse-background"></div>
+        
+        <!-- Rose-Glow Gradient Overlay -->
+        <div class="rose-glow-gradient"></div>
+        
+        <!-- HeartParticle Sky -->
+        <div class="heartparticle-sky" id="heartParticles"></div>
 
-  <center>
-    <h3>ARL & AMZ</h3>
-    <h2>HAPPY BIRTHDAY TO MY WIFE</h2>
-    <img src="pic 2.jpg" alt="armz" width="400">
-  </center>
+        <div class="container">
+            <!-- Header -->
+            <div class="header floating-hearts-dream">
+                <h2 class="subtitle amor-drift">αяυℓ ♥ αмѕα :</h2>
+                <h1 class="main-title midnight-heartlight">
+                   BIRTHDAY TO MY WIFE
+                </h1>
+            </div>
 
-  <center>
-    <h2>NAME : <span class="name1">AMSA</span></h2>
-    <h2>
-      B'DAY : <span class="date1">10/10/2025</span>
-    </h2>
-    <h4><u>To go time</u></h4>
-    <div class="countdown" id="countdown" aria-label="Countdown timer">
-      <div><span id="dd">00</span><small>Days</small></div>
-      <div><span id="hh">00</span><small>Hours</small></div>
-      <div><span id="mm">00</span><small>Minutes</small></div>
-      <div><span id="ss">00</span><small>Seconds</small></div>
+            <!-- Portrait Image Section -->
+            <div class="portrait-section cupids-drift">
+                <div class="portrait-container" id="portraitContainer">
+                    <div class="portrait-frame" id="portraitFrame">
+                        <img 
+                            src="pic 2.jpg"
+                            alt="Portrait of AMSA"
+                            class="portrait-image"
+                        />
+                        <div class="portrait-overlay floating-hearts-dream" id="portraitOverlay">
+                            <div class="overlay-content">
+                                <div class="heart-icon heartbeat">♥</div>
+                                <p>Revealed on Birthday</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Heartfall Animation Container -->
+                    <div class="heartfall-container" id="heartfallContainer"></div>
+                </div>
+                
+                <div class="name-info amor-drift">
+                    <p class="info-text midnight-heartlight">
+                        NAME: <span class="highlight sweetpulse">AMSA</span>
+                    </p>
+                    <p class="info-text midnight-heartlight">
+                        B'DAY Date: <span class="highlight sweetpulse">10/10/2025</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Countdown Timer -->
+            <div class="countdown-section floating-hearts-dream">
+                <div class="timer-card cupids-drift">
+                    <h3 class="timer-title midnight-heartlight">To go time</h3>
+                    <div class="timer-grid" aria-label="Countdown timer" aria-live="polite">
+                        <div class="timer-box sweetpulse-card">
+                            <div class="timer-number heartbeat" id="countdownDays">00</div>
+                            <div class="timer-label">Days</div>
+                        </div>
+                        <div class="timer-box sweetpulse-card">
+                            <div class="timer-number heartbeat" id="countdownHours">00</div>
+                            <div class="timer-label">Hours</div>
+                        </div>
+                        <div class="timer-box sweetpulse-card">
+                            <div class="timer-number heartbeat" id="countdownMinutes">00</div>
+                            <div class="timer-label">Minutes</div>
+                        </div>
+                        <div class="timer-box sweetpulse-card">
+                            <div class="timer-number heartbeat" id="countdownSeconds">00</div>
+                            <div class="timer-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heartzday Section -->
+            <div class="heartzday-section cupids-drift">
+                <div class="heartzday-card midnight-heartlight">
+                    <div class="heartzday-header">
+                        <span class="heartzday-title">Heartzday</span>
+                        <div class="heart-icon heartbeat">♥</div>
+                        <span class="heartzday-date">21 August 2025,</span>
+                    </div>
+                    
+                    <!-- Heartzday Timer -->
+                    <div class="heartzday-timer">
+                        <div class="heartzday-box sweetpulse-card">
+                            <div class="heartzday-number amor-drift" id="heartzDays">00</div>
+                            <div class="heartzday-label">Days</div>
+                        </div>
+                        <div class="heartzday-box sweetpulse-card">
+                            <div class="heartzday-number amor-drift" id="heartzHours">00</div>
+                            <div class="heartzday-label">Hours</div>
+                        </div>
+                        <div class="heartzday-box sweetpulse-card">
+                            <div class="heartzday-number amor-drift" id="heartzMinutes">00</div>
+                            <div class="heartzday-label">Minutes</div>
+                        </div>
+                        <div class="heartzday-box sweetpulse-card">
+                            <div class="heartzday-number amor-drift" id="heartzSeconds">00</div>
+                            <div class="heartzday-label">Seconds</div>
+                        </div>
+                    </div>
+                    
+                    <p class="heartzday-subtitle">Time since our love began ♥</p>
+                </div>
+            </div>
+
+            <!-- Heartfelt Message -->
+            <div class="message-section floating-hearts-dream">
+                <div class="message-card">
+                    <p class="message-text midnight-heartlight">
+                      <h2>𝐌𝐘 𝐃𝐄𝐀𝐑𝐄𝐒𝐓 𝐖𝐘𝐅 𝐀𝐌𝐒𝐀𝐇 :
+
+
+                      </h2><br>
+                        Every moment with you feels like a celebration, but today is extra special. 
+                        Your smile lights up my world, and your love fills my heart with endless joy. 
+                        Happy birthday to the most amazing woman in my life. Here's to another year 
+                        of beautiful memories, laughter, and adventures together. I love you more 
+                        than words can express. <span class="inline-heart heartbeat">♥</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Instagram Links -->
+            <div class="social-links cupids-drift">
+                <a 
+                    href="https://instagram.com/arul" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="social-link arul-link sweetpulse amor-drift"
+                >
+                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span>ARUL</span>
+                </a>
+                <a 
+                    href="https://instagram.com/amsa" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="social-link amsa-link sweetpulse amor-drift"
+                >
+                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span>AMSA</span>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer amor-drift">
+                <p class="footer-text midnight-heartlight">
+                    Developed by RM ARULBABU B.E CSE • Contact: 9626927722 © 2025
+                </p>
+            </footer>
+        </div>
+
+        <!-- Fallback for JS disabled -->
+        <noscript>
+            <div class="noscript-message">
+                <h2>ARL & AMZ Birthday Countdown</h2>
+                <p>Birthday: October 10, 2025</p>
+                <p>Heartzday: August 21, 2025, 8:00 PM</p>
+                <p>Please enable JavaScript to see the live countdown.</p>
+            </div>
+        </noscript>
     </div>
-    <hr><hr>
 
-    <h2>
-      Heartzday "💖" 
-      <span class="anni">21 August 2025, 8:00 PM</span>
-    </h2>
-
-    <h1>Count Up Timer</h1>
-    <div class="countup" id="countup">
-      <div><span id="days">00</span> Days</div>
-      <div><span id="hours">00</span> Hours</div>
-      <div><span id="minutes">00</span> Minutes</div>
-      <div><span id="seconds">00</span> Seconds</div>
-    </div>
-    <hr><hr>
-  </center>
-
-  <center>
-    <h2>To my dearest wyfff Amsah,</h2>
-    <p>
-      <b class="para">
-        On this special day, I want to take a moment to celebrate the incredible
-        person you are and the joy you bring into my life. Happy birthday, my love!
-      </b>
-    </p>
-    <p>
-      Your smile lights up my world, and your laughter is the sweetest melody to my ears. 
-      Every moment spent with you is a treasure, and I am grateful for the love we share.
-    </p>
-    <p>
-      May this birthday be filled with happiness, love, and unforgettable memories..
-    </p>
-  </center>
-
-  <center>
-    <a href="https://www.instagram.com/arxll_bxbzz?igsh=aXZ2M3h5b3EzcTU0" 
-       target="_blank" class="insta-link" title="Instagram">
-       <i class="fab fa-instagram"></i> ARUL
-    </a>
-    &nbsp;
-    <a href="https://www.instagram.com/arxll_bxbzz?igsh=aXZ2M3h5b3EzcTU0" 
-       target="_blank" class="insta-link" title="Instagram">
-       <i class="fab fa-instagram"></i> AMSA
-    </a>
-
-    <h4>“With love, always — thanks for visiting 💕”</h4>
-  </center>
-
-  <footer class="footer">
-    <p>Developed by RM ARULBABU B.E CSE • Contact: 9626927722 © 2025</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

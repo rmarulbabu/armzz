@@ -1,78 +1,599 @@
-/* ==========================
-   Global Styles
-========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #fce4ec; /* light pink background */
-  transition: all 0.5s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-/* ==========================
-   Text Styling
-========================== */
-.name1,
-.date1,
-.anni {
-  font-size: 20px;
-  color: rgb(5, 0, 0);
-  font-weight: bold;
+.app {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.para {
-  font-size: 15px;
-  color: rgb(5, 0, 0);
-  font-weight: 500;
+/* SweetPulse Background */
+.sweetpulse-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #fce7f3, #fdf2f8, #ecfdf5, #f0f9ff);
+    background-size: 400% 400%;
+    animation: sweetPulse 8s ease-in-out infinite;
 }
 
-/* ==========================
-   Count Up Timer
-========================== */
-.countup {
-  display: flex;
-  gap: 14px;
-  margin: 10px 0 22px;
+@keyframes sweetPulse {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
-.countup div {
-  background: rgba(33, 25, 25, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 20px 30px;
-  border-radius: 14px;
-  text-align: center;
-  min-width: 72px;
-  box-shadow: var(--shadow);
+/* Rose-Glow Gradient */
+.rose-glow-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(251, 113, 133, 0.1) 0%, rgba(244, 63, 94, 0.05) 50%, transparent 100%);
+    animation: roseGlow 6s ease-in-out infinite alternate;
 }
 
-.countup span {
-  font-size: 25px;
-  font-weight: 800;
-  display: block;
+@keyframes roseGlow {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 0.6; transform: scale(1.2); }
 }
 
-.countup small {
-  font-size: 14px;
-  opacity: 0.75;
+/* HeartParticle Sky */
+.heartparticle-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* ==========================
-   Instagram Links
-========================== */
-.insta-link {
-  font-size: 15px;
-  color: #db4b2f; /* Instagram pink */
-  text-decoration: none;
-  margin: 15px;
-  padding: 0 6px;
-  border-radius: 8px;
-  border: 3px solid #db1a5a;
-  transition: 0.3s;
+.heartparticle-drift {
+    position: absolute;
+    color: rgba(244, 63, 94, 0.4);
+    animation: heartParticleDrift linear infinite;
+    pointer-events: none;
+    font-size: 20px;
 }
 
-.insta-link i {
-  margin-right: 8px;
+@keyframes heartParticleDrift {
+    0% { 
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-.insta-link:hover {
-  background: #5b9711;
-  color: rgb(206, 86, 86);
+/* Container */
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #e11d48;
+    margin-bottom: 0.5rem;
+}
+
+.main-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+/* Portrait Section */
+.portrait-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.portrait-container {
+    position: relative;
+    display: inline-block;
+    transition: all 1s ease-in-out;
+}
+
+.portrait-frame {
+    width: 320px;
+    height: 384px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portrait-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.heart-icon {
+    font-size: 3rem;
+    color: #fda4af;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.overlay-content p {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.portrait-frame.revealed {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(244, 63, 94, 0.5), 0 0 60px rgba(244, 63, 94, 0.3);
+}
+
+.portrait-frame.revealed .portrait-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.portrait-frame.blurred {
+    filter: blur(4px);
+    opacity: 0.5;
+}
+
+/* Name Info */
+.name-info {
+    margin-top: 1.5rem;
+}
+
+.info-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: #e11d48;
+}
+
+/* Timer Cards */
+.countdown-section, .message-section {
+    margin-bottom: 2rem;
+}
+
+.timer-card, .message-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.timer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.timer-box {
+    background: #fce7f3;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.timer-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #e11d48;
+}
+
+.timer-label {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-top: 0.25rem;
+}
+
+/* Heartzday Section */
+.heartzday-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heartzday-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.heartzday-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.heartzday-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.heartzday-date {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.heartzday-timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.heartzday-box {
+    background: linear-gradient(135deg, #fce7f3, #fda4af);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.heartzday-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ec4899;
+}
+
+.heartzday-label {
+    font-size: 0.75rem;
+    color: #4b5563;
+}
+
+.heartzday-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Message */
+.message-text {
+    font-size: 1.125rem;
+    color: #374151;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.inline-heart {
+    color: #ef4444;
+    font-size: 1.25rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.arul-link {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.amsa-link {
+    background: linear-gradient(135deg, #f43f5e, #ec4899);
+}
+
+.instagram-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.social-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+}
+
+.footer-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Heartfall Animation */
+.heartfall-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.heartfall {
+    position: absolute;
+    animation: heartfall 4s ease-in infinite;
+    color: #ec4899;
+    pointer-events: none;
+    font-size: 1.5rem;
+}
+
+@keyframes heartfall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Animation Classes */
+.amor-drift {
+    animation: amorDrift 4s ease-in-out infinite;
+}
+
+@keyframes amorDrift {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating-hearts-dream {
+    animation: floatingHeartsDream 6s ease-in-out infinite;
+}
+
+@keyframes floatingHeartsDream {
+    0%, 100% { 
+        transform: translateY(0px) scale(1);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.02);
+        filter: brightness(1.1);
+    }
+}
+
+.midnight-heartlight {
+    animation: midnightHeartlight 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+}
+
+@keyframes midnightHeartlight {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(244, 63, 94, 0.6), 0 0 30px rgba(244, 63, 94, 0.4);
+    }
+}
+
+.cupids-drift {
+    animation: cupidsDrift 8s ease-in-out infinite;
+}
+
+@keyframes cupidsDrift {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    25% { transform: translateX(5px) rotate(0.5deg); }
+    75% { transform: translateX(-5px) rotate(-0.5deg); }
+}
+
+.sweetpulse {
+    animation: sweetPulseElement 2s ease-in-out infinite;
+}
+
+@keyframes sweetPulseElement {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.sweetpulse-card {
+    animation: sweetPulseCard 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes sweetPulseCard {
+    0%, 100% { 
+        box-shadow: 0 4px 6px rgba(244, 63, 94, 0.1);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 8px 25px rgba(244, 63, 94, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.heartlight-glow {
+    box-shadow: 0 0 30px rgba(244, 63, 94, 0.5), 0 0 60px rgba(244, 63, 94, 0.3);
+    animation: heartlightGlow 2s ease-in-out infinite;
+}
+
+@keyframes heartlightGlow {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(244, 63, 94, 0.5), 0 0 60px rgba(244, 63, 94, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 50px rgba(244, 63, 94, 0.7), 0 0 100px rgba(244, 63, 94, 0.5);
+    }
+}
+
+/* Enhanced hover effects */
+.sweetpulse-card:hover, .heartzday-box:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Focus styles for accessibility */
+button:focus, a:focus {
+    outline: 2px solid #f43f5e;
+    outline-offset: 2px;
+}
+
+/* Noscript fallback */
+.noscript-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .portrait-frame {
+        width: 280px;
+        height: 336px;
+    }
+    
+    .timer-grid, .heartzday-timer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .heartzday-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .info-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portrait-frame {
+        width: 240px;
+        height: 288px;
+    }
+    
+    .timer-card, .message-card, .heartzday-card {
+        padding: 1.5rem;
+    }
+    
+    .main-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .sweetpulse-background,
+    .rose-glow-gradient,
+    .heartparticle-sky,
+    .heartfall-container {
+        display: none;
+    }
+    
+    * {
+        animation: none !important;
+    }
 }
